@@ -50,7 +50,7 @@ function notify(notification){
 
 
 
-let name = getName('enter your name :');
+name = getName('enter your name :');
 function getName(str){
     let userName = prompt(str);
     if(userName=='' || userName==null){
