@@ -2,28 +2,28 @@
 
 messageContainer = document.querySelector('.messageContainer');
 
-function displayMsg(sender, senderName, msg){
+function displayMsg(sender, senderName, msg) {
     let newMsg = document.createElement('div');
-    newMsg.setAttribute('class',`msg ${sender}`);
-    if(senderName==lastMsgSender){
-        if(sender=='mm'){
-          newMsg.innerHTML = `
+    newMsg.setAttribute('class', `msg ${sender}`);
+    if (senderName == lastMsgSender) {
+        if (sender == 'mm') {
+            newMsg.innerHTML = `
                   <div class="${sender}">${msg}</div>`;
         }
-        else{
-          newMsg.innerHTML = `
+        else {
+            newMsg.innerHTML = `
                   <div class="${sender}">${msg}</div>`;
         }
         console.log('same');
     }
-    else{
+    else {
         newMsg.setAttribute('style', 'margin : 8px 0px 0px 0px');
-        if(sender=='mm'){
+        if (sender == 'mm') {
             newMsg.innerHTML = `
                   <div class="sender">you</div>
                   <div class="${sender}">${msg}</div>`;
         }
-        else{
+        else {
             newMsg.innerHTML = `
                   <div class="sender">${senderName}</div>
                   <div class="${sender}">${msg}</div>`;
@@ -36,10 +36,10 @@ function displayMsg(sender, senderName, msg){
     lastMsgSender = senderName;
 }
 
-function notify(notification){
+function notify(notification) {
     let notifier = document.createElement('div');
     notifier.innerText = notification;
-    notifier.setAttribute('class','notifier');
+    notifier.setAttribute('class', 'notifier');
     messageContainer.appendChild(notifier);
     messageContainer.scroll(0, messageContainer.scrollHeight);
 }
@@ -51,36 +51,36 @@ function notify(notification){
 
 
 name = getName('enter your name :');
-function getName(str){
+function getName(str) {
     let userName = prompt(str);
-    if(userName=='' || userName==null){
+    if (userName == '' || userName == null) {
         getName('please specify your name to join the chat room :');
     }
-    else{
+    else {
         socket.emit('user name', userName);
         notify(`you joined the chat as ${userName}`);
         return userName;
     }
 }
 
-socket.on('un', (name)=>{
+socket.on('un', (name) => {
     notify(`${name} joined the chat`);
 });
-socket.on('user leaved', (wholeaved)=>{
+socket.on('user leaved', (wholeaved) => {
     notify(wholeaved);
 });
 
 let form = document.querySelector('form');
 let message = document.querySelector('input');
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if(message.value!=0){
+    if (message.value != 0) {
         socket.emit('user message', name, message.value);
         displayMsg('mm', name, message.value);
         message.value = '';
     }
 });
 
-socket.on('um', (sender, msg) =>{
+socket.on('um', (sender, msg) => {
     displayMsg('om', sender, msg);
 });
