@@ -1,4 +1,9 @@
-
+:root {
+    --themebg: #1e2b2b;
+    --themebgdark : #121a1a;
+    --themeclr: #d7d28a;
+    --hoverclr: #374c4c;
+}
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +21,8 @@ html{
 }
 
 .chatContainer {
-    background: #1c2333;
+/*     background: #1c2333; */
+    background-color: var(--themebg);
     height: 100%;
     width: 100%;
     display: flex;
@@ -34,37 +40,49 @@ html{
 }
 
 .msg {
-    color: white;
-    min-height: 50px;
-    height: 50px;
-    border-bottom: 1px solid #3c3c3c;
+    color: lightgrey;
+    min-height: 52px;
+    height: 52px;
+/*     border-bottom: 1px solid #3c3c3c; */
     display: flex;
     align-items: center;
     padding-left: 10px;
 }
+.msg:hover{
+    background: var(--hoverclr);
+}
 .msg.mm{
-    background-color: #1b202e;
+    background-color: transparent;
 }
 .msg.om{
-    background-color: #292e3a;
+    background-color: transparent;
 }
 .at{
     color: gray;
 }
 .sender {
-    color: #9db7ff;
+    color: var(--themeclr);
     border-right: 1px solid gray;
     padding-right: 10px;
     padding-left: 10px;
     height: 80%;
     width: 10%;
     display: flex;
-    align-items: center;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    gap: 2px;
 }
-
+.s{
+    font-size: 17px;
+}
+.time {
+    font-size: 12px;
+    color: gray;
+}
+.mm, .om{
+    min-width: 86%;
+}
 .mm {
     /* background: #47598b; */
     padding-left: 10px;
@@ -76,13 +94,14 @@ html{
 .notifier {
     color: #808080a6;
     border: 1px solid #80808087;
-    background: #00000045;
+    background: transparent;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-bottom: 1px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c87;
+    border-top: 1px solid #3c3c3c87;
 }
 
 .sendMsg {
@@ -181,6 +200,10 @@ button {
     .messageContainer {
         height: calc(100% - 30px);
         width: 96%;
+    }
+
+    .sender{
+        width: 32%;
     }
 
     .notifier {
