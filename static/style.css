@@ -1,8 +1,13 @@
 :root {
-    --themebg: #1e2b2b;
+    /* --themebg: #1e2b2b;
     --themebgdark : #121a1a;
-    --themeclr: #d7d28a;
-    --hoverclr: #374c4c;
+    --themeclr: #d7d28a; */
+    /* --hoverclr: #374c4c; */
+    
+    --themebg: #303440;
+    --themebgdark: #121a1a;
+    --themeclr: #8b8ad7;
+    --hoverclr: #9caad724;
 }
 * {
     margin: 0;
@@ -208,6 +213,7 @@ button {
         min-height: 70px;
         display: block;
         height: auto;
+        padding-bottom: 8px;
     }
     .msg.mm{
         border-left: 2px solid #8688c5;
