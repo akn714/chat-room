@@ -202,12 +202,17 @@ button {
         width: 100%;
     }
 
-    .msg.mm{
-        border-left: 1px solid gray;
+    .msg.mm, .msg.om{
         margin: 8px 0px 8px 0px;
         box-shadow: black 0px 0px 8px -2px;
         min-height: 70px;
         display: block;
+    }
+    .msg.mm{
+        border-left: 2px solid #8688c5;
+    }
+    .msg.om{
+        border-left: 2px solid #7cb7b7;
     }
     .sender{
         width: 91%;
