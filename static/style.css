@@ -207,6 +207,7 @@ button {
         box-shadow: black 0px 0px 8px -2px;
         min-height: 70px;
         display: block;
+        height: auto;
     }
     .msg.mm{
         border-left: 2px solid #8688c5;
