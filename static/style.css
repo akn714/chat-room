@@ -199,11 +199,24 @@ button {
 
     .messageContainer {
         height: calc(100% - 30px);
-        width: 96%;
+        width: 100%;
     }
 
+    .msg.mm{
+        border-left: 1px solid gray;
+        margin: 8px 0px 8px 0px;
+        box-shadow: black 0px 0px 8px -2px;
+        min-height: 70px;
+        display: block;
+    }
     .sender{
-        width: 32%;
+        width: 91%;
+        border-right: none;
+        flex-direction: row;
+        align-items: center;
+        height: 27px;
+        gap: 52%;
+        padding: 0;
     }
 
     .notifier {
