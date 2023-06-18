@@ -4,5 +4,5 @@
 
 ## how to use?
 * clone the project into your local pc
-* run the command ``` npm install ``` to generate node_modules folder
+* run the command ``` npm install ``` to install all required dependencies
 * now run ``` node server.js ```
